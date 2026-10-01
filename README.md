@@ -744,3 +744,17 @@ curl -X GET http://localhost:8080/api/hallazgos/00000000-0000-0000-0000-00000000
 La solución implementada demuestra cómo la aplicación rigurosa de **Clean Architecture** permite aislar el modelo de dominio y sus invariantes de cualquier dependencia tecnológica o de infraestructura. A través de la **Máquina de Estados Finita**, el agregado `HallazgoAuditoria` garantiza que las transiciones de ciclo de vida sean consistentes y autodocumentadas.
 
 Asimismo, la adopción pragmática de un **CQRS Liviano** y una **Bitácora Append-Only** sobre una base de datos relacional confirma que no siempre es necesario implementar la complejidad de dos almacenes de datos separados o un Event Store completo para satisfacer con excelencia técnica los requerimientos funcionales, analíticos y de cumplimiento regulatorio de una organización.
+
+## Evidencias de Pruebas (Postman en VS Code)
+
+### 1. Registro de Hallazgo (201 Created)
+![Registro 201](docs/01-registro-201.png)
+
+### 2. Iniciar Remediación (200 OK)
+![Iniciar Remediación](docs/02-iniciar-remediacion.png)
+
+### 3. Error por Transición Inválida (400 Bad Request)
+![Transición Inválida 400](docs/03-error-transicion-invalida-400.png)
+
+### 4. Ciclo de Cierre y Reapertura (200 OK)
+![Cierre y Reapertura](docs/04-cerrar-y-reabrir.png)
